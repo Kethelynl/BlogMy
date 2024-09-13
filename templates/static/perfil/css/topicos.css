@@ -1,0 +1,149 @@
+main{
+    width: 100%;
+    min-height: 100vh;
+    background-color:#47887d;
+}
+
+.container1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 130px;
+    flex-direction: column;
+}
+
+.container1 h2{
+    margin-bottom: 10px;
+    margin-top: 10px;
+    color: var(--escuro);
+}
+
+.container1 h4{
+    margin-bottom: 10px;
+    margin-top: 10px;
+    color: var(--escuro);
+    font-size: 15px;
+}
+
+
+
+.input img{
+    width: 17px;
+}
+
+.input{
+    background-color: #bac2c1;
+    width: 100%;
+    padding: 5px 5px 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+input{
+    background: transparent;
+    outline: none;
+    color: rgb(188, 191, 194);
+}
+
+.container1 button{
+    margin-top: 20px;
+    margin-left: 30%;
+    padding: 3px 8px 3px;
+    border-radius: 10px;
+    cursor: pointer;
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+    background-color: var(--escuro);
+    transition: all ease 0.4s;
+}
+
+.container1 button:hover{
+    background-color: #47887d;
+    box-shadow: 1px 1px 10px;
+}
+
+.btn-adicionar{
+    margin-left: 5%;
+    padding: 5px 10px 5px;
+    background-color: var(--escuro);
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    transition: all ease 0.3s;
+}
+
+.btn-adicionar:hover{
+    background-color: #47887d;
+    box-shadow: 1px 1px 10px;
+}
+
+
+.topicos{
+    width: 100%;
+    background-color:#47887d;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    display: flex;
+    margin-top: 30px;
+}
+
+.topicos p {
+    color: var(--branco);
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0; /* Remove margens adicionais */
+    flex-grow: 1; /* Permite que o parágrafo cresça e empurre o botão */
+}
+
+.topicos ul li {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+    height: 40px;
+    width: 800px;
+    align-items: center;
+    background-color: var(--escuro);
+    justify-content: space-between; /* Ajustado para espaço entre texto e botão */
+    border-radius: 10px;
+    transition: all ease 0.3s;
+    flex-wrap: nowrap; /* Evita quebra de linha */
+    overflow: hidden;
+    padding: 0 10px; /* Adicionado padding para dar espaço interno */
+}
+
+
+
+.topicos button {
+    padding: 5px 8px;
+    background-color: var(--claro);
+    color: var(--escuro);
+    cursor: pointer;
+    border-radius: 10px;
+    font-weight: bold;
+    transition: all ease 0.3s;
+    margin-left: auto; /* Empurra o botão para a direita */
+}
+
+.topicos button:hover{
+    background-color: #285772;
+}
+
+
+@media(max-width: 430px){
+    .topicos ul  li{
+        height: 40px;
+        width: 300px;
+        font-weight: bold;
+    }
+
+    .topicos{
+        margin-left: -20px;
+    }
+}
+

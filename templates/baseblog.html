@@ -1,0 +1,72 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'general/css/base.css' %}">
+    {% block link %}{% endblock %}
+    <title></title>
+</head>
+{% block body %}
+<body>
+    <header>
+        <div class="nav-list">
+            <div class="logo">BlogMy</div>
+            <div class="list-home">
+                <ul>
+                    <li><a href="{% url 'topics' %}" class="home_list">Home</a></li>
+                    <li><a href="{% url 'blogall' %}" class="home_list">Blog</a></li>
+                    <li><a href="{% url 'topicos' %}" class="home_list">Tópicos</a></li>
+                    <li><a href="{% url 'assuntos2' %}" class="home_list">Assuntos</a></li>
+                    <li><a href="{% url 'perfil' %}" class="home_list">perfil</a></li>
+                    {% if user.is_authenticated %}
+                      <li><a href="{% url 'logout' %}" class="home_list">Sair</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+            <div class="nome">
+                {% if user.username|length > 10 %}
+                 <h3>{{user.username|slice:":10"}}</h3>
+                {% else %}
+                 <h3>{{user.username}}</h3>
+                {% endif %}
+            </div>
+            <div class="img">
+                <button type="submit" id="btn-menu"><img src="{% static 'general/img/menu.png'%}"></button>
+            </div>
+        </div>
+        <div class="nav-list_celular" id="nav-list_celular">
+            <div class="list-home2">
+                <ul>
+                    <li><a href="{% url 'topics' %}" class="home_list">Home</a></li>
+                    <li><a href="{% url 'blogall' %}" class="home_list">Blog</a></li>
+                    <li><a href="{% url 'topicos' %}" class="home_list">Tópicos</a></li>
+                    <li><a href="{% url 'assuntos2' %}" class="home_list">Assuntos</a></li>
+                    <li><a href="{% url 'perfil' %}" class="home_list">perfil</a></li>
+                    {% if user.is_authenticated %}
+                    <li><a href="" class="home_list">Sair</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        {% block main %}
+        {% endblock %}
+    </main>
+
+    <footer>
+        <div class="criadora">
+            <p>Criado por: Kethelyn Cavalari</p>
+            <h6>Engenharia da Computação</h6>
+        </div>
+    </footer>
+
+    {% block script %}
+    {% endblock %}
+    <script src="{% static 'general/js/script.js' %}"></script>
+</body>
+{% endblock %}
+</html>

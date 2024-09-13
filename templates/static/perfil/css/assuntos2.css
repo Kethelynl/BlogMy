@@ -1,0 +1,54 @@
+main{
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--escuro);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.titulo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 80px;
+    color: white;
+}
+
+.titulo h2{
+    margin-top: 60px;
+}
+
+.titulo p{
+    margin-bottom: 30px;
+}
+
+.topicos{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 10px;
+    width: 60%;
+}
+
+.topicos p{
+    margin-bottom: 20px;
+    padding: 5px 10px 5px;
+    border-radius: 10px;
+    color: var(--escuro);
+    font-weight: bold;
+    background-color: var(--claro);
+    transition: all ease 0.4s;
+}
+
+.topicos p a{
+    display: block;
+    color: var(--escuro);
+}
+
+.topicos p:hover{
+    background-color:#4e9a8D;
+}
+

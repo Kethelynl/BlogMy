@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin: 0;
+    border: none;
+    text-decoration: none;
+    list-style: none;
+    font-family: Roboto, sans-serif;
+}
+
+
+header {
+    width: 100%;
+    position: fixed;
+    top: 0; 
+    z-index: 1000; /* Certificar-se que o header está sobre o conteúdo */
+    height: 50px; /* Definir uma altura específica para o header */
+    background-color: #153548; /* Definir uma cor de fundo */
+}
+
+main {
+    margin-top: 50px; /* Adicionar espaço equivalente à altura do header */
+}
+
+
+.nav-list{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #153548;
+}
+
+.nav-list_celular{
+    display: none;
+}
+
+.logo{
+    font-family: Kanit, sans-serif;
+    font-size: 25px;
+    font-weight: 600;
+    background: linear-gradient(to left, #4e9a8D, #9AE8B7);
+    background-clip: text;
+    padding: 0px 10px 0px;
+    border-radius: 20px;
+    color: transparent;
+    animation: animated 5s linear infinite;
+}
+
+@keyframes animated{
+    to{background-position-x: 161px;}
+}
+
+
+.list-home ul{
+   display: flex;
+   flex-direction: row;
+   gap: 50px;
+}
+
+
+.home_list{
+    color: white;
+    position: relative;
+    padding-bottom: 5px;
+    transition: all 0.3s ease;
+}
+
+.home_list:hover{
+    color: #4e9a8D;
+}
+
+.home_list::after{
+     content: '';
+     position: absolute;
+     width: 0;
+     left: 0;
+     bottom: 0;
+     height: 2px;
+     background-color: rgb(255, 255, 255);
+     transition: width 0.3s ease;
+}
+
+.home_list:hover::after{
+    width: 100%;
+}
+
+.nome{
+    background-color: #4e9a8D;
+    padding: 5px 10px 5px;
+    border-radius: 20px;
+    margin-right: -100px;
+    color: white;
+}
+
+.btn-cadastro_login{
+    background-color: #4e9a8D;
+    padding: 5px 10px 5px;
+    border-radius: 20px;
+    margin-right: -100px;
+}
+
+.btn-entrar.active{
+    background-color: #153548;
+    width: 40%;
+    color: white;
+    padding: 5px 10px 5px;
+    border-radius: 20px;
+    transform: translateX(0);
+}
+
+.btn-cadastrar.active{
+    background-color: #153548;
+    width: 40%;
+    color: white;
+    padding: 5px 10px 5px;
+    border-radius: 20px;
+    transform: translateX(0);
+}
+
+.btn-cadastrar, .btn-entrar{
+    background-color: #4e9a8D;
+    color: #000000;
+    transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+}
+
+.btn-cadastrar.exit-left{
+    transform: translateX(-100%);
+}
+
+.btn-login.exit-rigth{
+    transform: translateX(100%);
+}
+
+.img button{
+   display: none;
+}
+
+footer{
+    width: 100%;
+    height: 20vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--footer);
+    color: white;
+    text-align: center;
+}
+
+@media(max-width:430px){
+    .list-home ul{
+        display: none;
+    }
+
+    .nav-list_celular.active{
+        display: block;
+    }
+
+    .list-home2{
+        margin-top: -4px;
+        position: fixed;
+        background-color: #1a545D;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: auto;
+        margin-bottom: 5px;
+    }
+
+    .list-home2 ul{
+        display: flex;
+        margin-top: 20px;
+        gap: 10px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-left: -30px;
+    }
+
+    .img button{
+        display: block;
+        background: transparent;
+    }
+    
+    .img img{
+        display: block;
+        margin-right: -50px;
+        width: 50%;
+    }
+
+    .btn-cadastro_login{
+        margin-right: 0;
+    }
+
+    .nome{
+        margin-right: 20px;
+    }
+    
+}
+
+@media(max-width:320px){
+    .btn-cadastro_login{
+        padding: 0px 5px 0px;
+    }
+
+    .list-home2{
+        height: 100px;
+    }
+}

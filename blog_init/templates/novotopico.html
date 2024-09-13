@@ -1,0 +1,25 @@
+{% extends 'baseblog.html' %}
+{% load static %}
+
+{% block link %}
+  <link rel="stylesheet" href="{% static 'perfil/css/adciTopicos.css' %}">
+  <link rel="stylesheet" href="{% static 'perfil/css/cores.css' %}">
+{% endblock %}
+{% block main %}
+  <div class="container">
+    <div class="titulo">
+      <p>Adicione um novo tópico</p>
+    </div>
+    
+    <div class="Novo">
+      <form action="{% url 'adicionarTopico' %}" method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <div class="btn">
+          <button name="submit">adicionar</button>
+          <a href="{% url 'topicos'%}">Voltar</a>
+        </div>
+        </form>
+    </div>
+  </div>
+{% endblock %}

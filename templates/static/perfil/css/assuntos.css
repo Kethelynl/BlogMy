@@ -1,0 +1,132 @@
+.text-content {
+    display: inline;
+}
+
+.text-more {
+    display: inline;
+}
+
+.text-full {
+    display: none;
+}
+
+.text-toggle {
+    cursor: pointer;
+    color: #007bff;
+    text-decoration: underline;
+}
+
+main{
+    background-color: var(--escuro);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+
+.titulo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 80px;
+}
+
+.titulo p{
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.titulo a{
+    display: flex;
+    margin-left: auto;
+    margin-right: 30px;
+    padding: 5px 10px 5px;
+    background-color: var(--medio);
+    color: var(--escuro);
+    font-weight: bold;
+    border-radius: 10px;
+    transition: all ease 0.3s;
+}
+
+.titulo a:hover{
+    background-color: #63a89d;
+}
+
+.nregister{
+    font-size: 14px;
+    color: white;
+    margin-top: 30px;
+}
+.container2{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.cart{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 200px;
+    height: 300px;
+    
+    background-color: white;
+    margin: 20px;
+    border-radius: 10px;
+}
+
+.data{
+    margin-top: 5px;
+    margin-right: 20%;
+    color: var(--escuro);
+    margin-bottom: 10px;
+}
+.cart img{
+    width: 100%;
+    margin-right: 20%;
+    margin-bottom: 10px;
+    max-height: 150px;
+}
+
+.texto{
+    margin-right: 20%;
+}
+
+.btn{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 10px;
+    justify-content:space-between;
+    gap: 40%;
+    margin-right: 40%;
+}
+
+.apagar{
+    padding: 3px 5px 3px;
+    background-color: var(--medio);
+    transition: all ease 0.3s;
+    border-radius: 10px;
+    color: var(--escuro);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.apagar:hover{
+    background-color: var(--claro);
+}

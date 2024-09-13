@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block link %}
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+  <link rel="stylesheet" href="{% static 'general/css/home.css' %}">
+{% endblock %}
+
+{% block main %}
+  <!-- Container com conteúdo home -->
+  <div class="container_head">
+    <div id="particles-js"></div>
+    <div class="titulo">
+      <h2>Conheça nosso BlogMY</h2>
+      <p>Compartilhando ideias e momentos que moldam nossa jornada, um post de cada vez.</p>
+    </div>
+  </div>
+
+  <!-- Container com conteúdo Sobre -->
+  <div class="container_sobre" id="section1">
+    <br>
+    <br>
+    <div class="sobre" id="sob-public"  data-aos="fade-up" data-aos-duration="1500" data-aos-delay="300">
+        <h3>Publicação de posts</h3>
+        <p>Acompanhe novos artigos e conteúdos, com textos, imagens e vídeos organizados por categorias e tags para facilitar sua leitura.</p>
+    </div>
+    <div class="sobre" id="sob-comen" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="300">
+        <h3>Comentários</h3>
+        <p>Participe da conversa! Deixe suas opiniões e interaja com outros leitores nos comentários de cada post.</p>
+    </div>
+    <div class="sobre" id="sob-pesquisa" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="300">
+        <h3>Pesquisa e categorias</h3>
+        <p> Encontre facilmente o que procura usando nossa ferramenta de busca ou navegando por categorias e tags.</p>
+    </div>
+    <div class="sobre" id="sob-assi" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="300">
+        <h3>Assinatura de novidades</h3>
+        <p>Não perca nada! Inscreva-se para receber notificações ou e-mails sempre que um novo post for publicado.</p>
+    </div>
+  </div>
+
+  <!-- container vale comigo-->
+  <div class="container_contato" id="section2">
+    <div class="gostou">
+        <h3>Alguma duvida? entre em contato comigo!</h3>
+        <h5>Kethelyn Cavalari</h5>
+    </div>
+    <div class="contatos">
+        <ul>
+            <li><a href="https://github.com/Kethelynl" class="icon"><img src="{% static 'general/img/github.png'%}" ></a></li>
+            <li><a href="https://www.linkedin.com/in/kethelyn-cavalari/" class="icon"><img src="{% static 'general/img/linkedin.png'%}" alt=""></a></li>
+            <li><a href="https://wa.me/5511984870198?text=Olá%2C%20gostei%20do%20seu%20perfil%20podemos%20conversar?" target="_blank" class="icon"><img src="{% static 'general/img/whatss.png'%}" alt=""></a></li>
+            <li><a href="mailto:kethcavalari@gmail.com" class="icon"><img src="{% static 'general/img/email.png'%}" alt=""></a></li>
+        </ul>
+    </div>
+  </div>
+{% endblock %}
+
+{% block script %}
+   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+   <script>
+    particlesJS("particles-js", {
+        "particles": {
+            "number": {
+                "value": 100
+            },
+            "color": {
+                "value": "#ffffff"
+            },
+            "shape": {
+                "type": ""
+            },
+            "opacity": {
+                "value": 0.5
+            },
+            "size": {
+                "value": 5
+            },
+            "line_linked": {
+                "enable": true,
+                "distance": 150,
+                "color": "#ffffff",
+                "opacity": 0.4,
+                "width": 1
+            },
+            "move": {
+                "enable": true,
+                "speed": 2
+            }
+        }
+     });
+   </script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+   <script>
+     AOS.init(); // Inicializa o AOS
+   </script>
+{% endblock %}

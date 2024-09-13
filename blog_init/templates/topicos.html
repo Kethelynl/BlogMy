@@ -1,0 +1,47 @@
+{% extends 'baseblog.html'%}
+{% load static %}
+
+{% block link%}
+  <link rel="stylesheet" href="{% static 'perfil/css/topicos.css'%}">
+  <link rel="stylesheet" href="{% static 'perfil/css/cores.css' %}">
+{% endblock%}
+
+{% block main %}
+    <div class="container1">
+      <h2>Tópicos</h2>
+      <h4>A dicione seus tópicos aqui!</h4>
+    </div>
+    
+    
+    <a href="{% url 'adicionarTopico'%}" class="btn-adicionar">Novo Topico</a>
+
+    <div class="topicos">
+          {% if topicos %}
+          <ul id="results">
+            {% for topico in topicos %}
+                <li>
+                  {% if user.username|length > 50 %}
+                   <p>{{ topico|slice:":50"}}</p>
+                </li>
+                  {% else %}
+                  <p>{{ topico }}</p>
+                  {% endif %}
+                  <form method="post" action="{% url 'apagarTopico' topico.id %}" class="excluir">
+                    {% csrf_token %}
+                    <button type="submit">Excluir</button>
+                  </form>
+                </li>
+            {% empty %}
+                <li>Nenhum tópico encontrado.</li>
+            {% endfor %}
+        </ul>
+    </div>
+          {% else %}
+          <p>Você ainda não tem tópicos.</p>
+          {% endif %}
+{% endblock %}
+
+{% block script %}
+  <script src="{% static 'perfil/js/script.js'%}"></script>
+{% endblock %}
+

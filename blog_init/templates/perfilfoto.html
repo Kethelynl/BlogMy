@@ -1,0 +1,40 @@
+{% extends 'baseblog.html' %}
+{% load static %}
+
+{% block link %}
+   <link rel="stylesheet" href="{% static 'perfil/css/perfilfoto.css'%}">
+   <link rel="stylesheet" href="{% static 'perfil/css/cores.css'%}">
+{% endblock %}
+
+{% block main %}
+<div class="foto">
+   <form action="{% url 'uploadImage'%}" method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+       <!-- Campo de upload de imagem -->
+       <div class="form-group">
+        <label for="id_foto" class="custom-upload">
+           <span>Escolher Imagem</span>
+        </label>
+        <input type="file" id="id_foto" name="foto" accept="image/*">
+        <img id="preview" src="#" alt="Pré-visualização da imagem" style="display:none; max-width: 200px; max-height: 200px;">
+     </div>
+  
+     <!-- Botão de enviar -->
+     <button type="submit" class="btn btn-primary">Enviar</button>
+     </form>
+</div>
+{% endblock %}
+
+{% block script %}
+<script>
+   document.getElementById('id_foto').addEventListener('change', function(event) {
+       const reader = new FileReader();
+       reader.onload = function() {
+           const preview = document.getElementById('preview');
+           preview.src = reader.result;
+           preview.style.display = 'block';
+       };
+       reader.readAsDataURL(event.target.files[0]);
+   });
+</script>
+{% endblock %}

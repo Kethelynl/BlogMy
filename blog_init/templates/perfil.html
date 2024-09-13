@@ -1,0 +1,34 @@
+{% extends 'baseblog.html' %}
+{% load static %}
+
+{% block link %}
+   <link rel="stylesheet" href="{% static 'perfil/css/perfil.css'%}">
+   <link rel="stylesheet" href="{% static 'perfil/css/cores.css'%}">
+{% endblock %}
+
+{% block main %}
+  <div class="container">
+     <h3>Olá, {{ user.username }}</h3>
+     <p>Esse é seu perfil</p>
+  </div>
+  <div class="container2">
+    <!-- Verifica se o usuário tem uma foto de perfil e exibe -->
+    {% if user.perfil.foto %}
+      <div class="img-foto">
+        <img src="{{ user.perfil.foto.url }}" alt="Foto de perfil" id="profile-image">
+      </div>
+      <p class="Colocar">
+        <a href="{% url 'uploadImage' %}" >Alterar foto</a>
+     </p>
+    {% else %}
+      <p>Você ainda não tem uma foto de perfil.</p>
+      <div class="img-foto"></div>
+      <p class="Colocar"><a href="{% url 'uploadImage' %}">Colocar Foto</a></p>
+    {% endif %}
+    <h4>{{ user.username }}</h4>
+  </div>
+  <div class="container3">
+    <p>Esse será o seu perfil onde todos poderão acessar e ver</p>
+    <p>Em breve teremos mais funcionalidades.</p>
+  </div>
+{% endblock %}

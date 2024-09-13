@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'general/css/base.css' %}">
+    {% block link %}{% endblock %}
+    <title></title>
+</head>
+{% block body %}
+<body>
+    <header>
+        <div class="nav-list">
+            <div class="logo">BlogMy</div>
+            <div class="list-home">
+                <ul>
+                    <li><a href="{% url 'init' %}" class="home_list">Home</a></li>
+                    <li><a href="#section1" class="home_list">Sobre</a></li>
+                    <li><a href="#section2" class="home_list">Contate-me</a></li>
+                </ul>
+            </div>
+            <div class="btn-cadastro_login">
+                <a href="{% url 'login' %}"  class="btn-entrar" id="btn-entrar">Entrar</a>
+                <a href="{% url 'registrar' %}"  class="btn-cadastrar" id="btn-cadastrar">Cadastrar</a>
+            </div>
+            <div class="img">
+                <button type="submit" id="btn-menu"><img src="{% static 'general/img/menu.png'%}"></button>
+            </div>
+        </div>
+        <div class="nav-list_celular" id="nav-list_celular">
+            <div class="list-home2">
+                <ul>
+                    <li><a href="#" class="home_list">Home</a></li>
+                    <li><a href="#section1" class="home_list">Sobre</a></li>
+                    <li><a href="#section2" class="home_list">Contate-me</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        {% block main %}
+        {% endblock %}
+    </main>
+
+    {% block script %}
+    {% endblock %}
+    <script src="{% static 'general/js/script.js' %}"></script>
+</body>
+{% endblock %}
+</html>

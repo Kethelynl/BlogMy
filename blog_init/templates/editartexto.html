@@ -1,0 +1,49 @@
+{% extends 'baseblog.html' %}
+{% load static %}
+
+{% block link %}
+   <link rel="stylesheet" href="{% static 'perfil/css/newentry.css'%}">
+   <link rel="stylesheet" href="{% static 'perfil/css/cores.css'%}">
+{% endblock %}
+
+
+{% block main %}
+    <div class="container">
+        <form action="{% url 'atualizarEntrada' entrada.id %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+                <!-- Campo de texto -->
+            <div class="form-group">
+                {{ form.text.label_tag }}
+                {{ form.text }}
+            </div>
+    
+                <!-- Campo de imagem customizado -->
+                <div class="form-group">
+                <label for="id_imagem" class="custom-upload">
+                    <span>Escolher Imagem</span>
+                </label>
+                {{ form.imagem }}
+                <img id="preview" src="#" alt="Pré-visualização" style="display: none; max-width: 100px;">
+                </div>
+    
+                <!-- Botão de publicar -->
+                <button type="submit" class="btn btn-primary">Publicar</button>
+         
+        </form>
+        
+    </div>
+{% endblock%}
+
+{% block script %}
+   <script>
+      document.getElementById('id_imagem').addEventListener('change', function(event) {
+         const reader = new FileReader();
+         reader.onload = function() {
+            const preview = document.getElementById('preview');
+            preview.src = reader.result;
+            preview.style.display = 'block';
+         };
+         reader.readAsDataURL(event.target.files[0]);
+      });
+   </script>
+{% endblock %}

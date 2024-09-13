@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load static %}
+
+<!-- links css -->
+{% block link %}
+  <link rel="stylesheet" href="{% static 'general/css/cadastro.css'%}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+{% endblock %}
+
+<!-- Corpo da pagina -->
+{% block main %}
+   <div id="particles-js"></div>
+   <div class="container_cadastro">
+        <h3>Create Account</h3>
+        <hr>
+        <br>
+        {{ form.username.errors }}
+        {{ form.password1.errors }}
+        {{ form.password2.errors }}
+        <form action="{% url 'registrar' %}" method="post">
+            {% csrf_token %}
+            {{form.as_p}}
+            <button name="submit">Cadastrar</button>
+            <input type="hidden" name="next" value="{% url 'topics' %}">
+        </form>
+   </div>
+{% endblock %}
+
+<!-- Script Java Script -->
+{% block script %}
+   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+   <script>
+    particlesJS("particles-js", {
+        "particles": {
+            "number": {
+                "value": 100
+            },
+            "color": {
+                "value": "#ffffff"
+            },
+            "shape": {
+                "type": ""
+            },
+            "opacity": {
+                "value": 0.5
+            },
+            "size": {
+                "value": 5
+            },
+            "line_linked": {
+                "enable": true,
+                "distance": 150,
+                "color": "#ffffff",
+                "opacity": 0.4,
+                "width": 1
+            },
+            "move": {
+                "enable": true,
+                "speed": 2
+            }
+        }
+     });
+   </script>
+{% endblock %}

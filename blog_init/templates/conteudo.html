@@ -1,0 +1,23 @@
+{% extends 'baseblog.html' %}
+
+{% load static %}
+
+{% block link %}
+ <link rel="stylesheet" href="{% static 'perfil/css/conteudo.css' %}">
+ <link rel="stylesheet" href="{% static 'perfil/css/cores.css' %}">
+{% endblock %}
+
+{% block main %}
+<div class="conatiner">
+  
+    <p class="data">{{ entrada.data_add | date:'M d, Y H:i'}}</p>
+    {% if entrada.imagem %}
+      <img src="{{ entrada.imagem.url }}" alt="Imagem do assunto">
+    {% endif %}
+    <p>{{ entrada.text }}</p>
+    <br>
+    <div class="btn">
+      <a href="{% url 'blogall' %}">Voltar</a>
+    </div>
+</div>
+{% endblock %}

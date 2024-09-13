@@ -1,0 +1,29 @@
+{% extends 'baseblog.html' %}
+{% load static %}
+
+{% block link %}
+ <link rel="stylesheet" href="{% static 'perfil/css/assuntos2.css' %}">
+ <link rel="stylesheet" href="{% static 'perfil/css/cores.css' %}">
+{% endblock %}
+
+{% block main %}
+
+<div class="titulo">
+    <h2> Escolha o tópico que deseja escrever sobre! </h2>
+    <p> Clique em cima e ele te rendicionará para a pagina de edição. </p>
+</div>
+
+<div class="topicos">
+  {% if topicos %}
+    <div class="topicos_cart">
+        {% for topico in topicos %}
+
+          <p>
+            <a href="{% url 'assuntos' topico.id %}">{{ topico }}</a>
+          </p>
+    
+        {% endfor %}
+    </div>
+  {% endif %}
+</div>
+{% endblock %}

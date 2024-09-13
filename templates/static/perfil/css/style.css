@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/*  tirando configurações iniciais */
+*{
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    font-family: Roboto, sans-serif;
+}
+
+/*  configurações do corpo do site */
+body{
+    width: 100%;
+    height: 100vh;
+}
+
+main{
+    margin-left: 120px;
+}
+
+/*  configurações do corpo da nav-list */
+header{
+    display: flex;
+    flex-direction: column;
+    left: 0;
+    width: 120px;
+    height: 100vh;
+    position: fixed;
+    background-color: #153548;
+}
+
+.nav-list{
+
+    margin-top: 15px;
+}
+
+.container_img{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.container_img img{
+    width: 35px;
+    margin-top: 30px;
+}
+
+.nome{
+    margin-top: 5px;
+    color: white;
+    font-size: 13px;
+}
+
+.links_principais{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-right: 30px;
+}
+
+.links_principais ul li{
+    margin-bottom: 50px;
+}
+
+.conteudos{
+    color: white;
+    position: relative;
+    padding-bottom: 5px;
+    transition: all 0.3s ease;
+}
+
+.conteudos:hover{
+    color: #4e9a8D;
+}
+
+.conteudos::after{
+     content: '';
+     position: absolute;
+     width: 0;
+     left: 0;
+     bottom: 0;
+     height: 2px;
+     background-color: rgb(255, 255, 255);
+     transition: width 0.3s ease;
+}
+
+.conteudos:hover::after{
+    width: 100%;
+}
+
+
+.logo{
+    font-family: Kanit, sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    background: linear-gradient(to left, #4e9a8D, #9AE8B7);
+    background-clip: text;
+    padding: 0px 10px 0px;
+    border-radius: 20px;
+    color: transparent;
+    animation: animated 5s linear infinite;
+}
+
+@keyframes animated{
+    to{background-position-x: 161px;}
+}

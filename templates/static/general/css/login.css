@@ -1,0 +1,111 @@
+body{
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #4e948d;
+}
+
+
+
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.login{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: 30px;
+    width: 300px;
+    border-radius: 10px;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    background-color: #ffffff;
+}
+
+.login p{
+    font-size: 12px;
+}
+
+.msg{
+    text-align: center;
+}
+
+p{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    text-align: start;
+    
+}
+
+label{
+    font-size: 10px;
+    width: 100%;
+    margin-right: 10px;
+}
+
+input{
+    border: #4e948d solid 1px;
+    padding: 5px 10px 5px;
+}
+hr{
+    border: solid 1px #4e948d;
+    width: 15%;
+}
+
+h3{
+    font-size: 25px;
+    margin-bottom: 3px;
+    margin-top: -20px;
+}
+
+form button{
+    background-color: #4e948d;
+    width: 180px;
+    border-radius: 10px;
+    padding: 5px 10px 5px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 2;
+    position: absolute;
+}
+
+form button:hover{
+    background-color: #3e9e96;
+    box-shadow: 1px 1px 10px #909695;
+}
+
+
+ul.errorlist {
+    display: none;
+}
+
+.error-messages {
+    color: red;
+    font-size: 10px;
+    margin-left: -75px;
+}
+
+.form-control {
+    width: 100%;
+}
+
+span{
+    display: none;
+}
